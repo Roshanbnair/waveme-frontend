@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-5"></div>
+    <div class="col-lg-4 d-flex align-items-center">
+      <h1>Add Song Details</h1>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+  </div>
+
+  <div style="width: 100%;display: flex;align-items: center;justify-content: center;">
+    <form action="" class="border rounded p-4" #addSongForm="ngForm" style="width: 45%;">
+
+      <!-- category div -->
+      <div class="mb-2">
+        <select name="category" #category="ngModel" [(ngModel)]="song.category" class="form-control" required >
+          <option disabled selected hidden>{{song.category}}</option>
+          <option value="English">English</option>
+          <option value="Hindi">Hindi</option>
+          <option value="Malayalam">Malayalam</option>
+        </select>
+        <!-- <input name="category" #category="ngModel" [(ngModel)]="song.category" type="text"  placeholder="Song Category" class="form-control"  pattern="[a-zA-Z ]*"  required> -->
+    </div>
+    <!-- Title Validation -->
+    <div *ngIf="title.invalid && title.touched" class="mb-2 text-danger">
+      Please enter a valid Title here
+    </div>
+
+      <!-- TItle div -->
+        <div class="mb-2">
+            <input name="title" #title="ngModel" [(ngModel)]="song.title" type="text"  placeholder="Title" class="form-control"  pattern="[a-zA-Z ]*"  required>
+        </div>
+        <!-- Title Validation -->
+        <div *ngIf="title.invalid && title.touched" class="mb-2 text-danger">
+          Please enter a valid Title here
+        </div>
+
+        <!-- album -->
+        <div class="mb-2">
+            <input name="album" #album="ngModel" [(ngModel)]="song.album" type="text" placeholder="Album Name" class="form-control" pattern="[a-zA-Z ]*" required>
+        </div>
+        <!-- album VALIDATION -->
+        <div *ngIf="album.invalid && album.touched" class="mb-2 text-danger">
+          Please enter a valid album name here
+        </div>
+        
+        <!-- artist -->
+        <div class="mb-2">
+          <input name="artist" #artist="ngModel" [(ngModel)]="song.artist" type="text" placeholder="Artist Name" class="form-control"  pattern="[a-zA-Z ]*" required>
+        </div>
+        <!-- artist VALIDATION -->
+        <div *ngIf="artist.invalid && artist.touched" class="mb-2 text-danger">
+          Please enter a valid contact image here
+        </div>
+
+        <!-- artwork -->
+        <div class="mb-2">
+          <input name="artwork" #artwork="ngModel" [(ngModel)]="song.artwork" type="text" placeholder="Photo URL" class="form-control" required>
+        </div>
+        <!-- PHOTO VALIDATION -->
+        <div *ngIf="artwork.invalid && artwork.touched" class="mb-2 text-danger">
+          Please enter a valid photo url here
+        </div>
+
+        <!-- SONG URL -->
+        <div class="mb-2">
+          <input name="url" #url="ngModel" [(ngModel)]="song.url" type="text" placeholder="Song URL" class="form-control" required>
+        </div>
+        <!-- PHOTO VALIDATION -->
+        <div *ngIf="url.invalid && url.touched" class="mb-2 text-danger">
+          Please enter a valid song url here
+        </div>
+        <!-- id -->
+        <div class="mb-2">
+          <input name="id" #id="ngModel" [(ngModel)]="song.id" type="text" placeholder="Song id" class="form-control" required>
+        </div>
+        <!-- PHOTO VALIDATION -->
+        <div *ngIf="id.invalid && id.touched" class="mb-2 text-danger">
+          Please enter a valid contact image here
+        </div>
+
+        <div class="mt-3">
+          <div class="col-md-4"></div>
+          <div class="col-md-2"></div>
+          <div class="col-md-6 dflex justify-content-end"></div>
+          <button type="text" class="btn btn-danger text-light" routerLink="">Clear</button>
+          <button  type="text" class="btn btn-info text-light ms-2" [disabled]="addSongForm.invalid" (click)="addSong(song)">Add</button>
+      </div>
+        
+    </form>
+</div>

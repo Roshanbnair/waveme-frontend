@@ -1,0 +1,20 @@
+<div class="app-container">
+  <div class="header">
+    <app-header (menuBtnClicked)="menu()" [bool]="bool"></app-header>
+  </div>
+
+  <!-- MAIN -->
+  <mat-drawer-container class="content-container">
+
+    <!-- sidebar -->
+    <mat-drawer mode="side" [opened]="!bool" class="side-nav">
+      <app-sidenav style="background-color: #121212;"></app-sidenav>
+    </mat-drawer>
+
+    <!-- MAIN CONTENT -->
+    <mat-drawer-content class="content">
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  
+</div>

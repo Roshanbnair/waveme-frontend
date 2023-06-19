@@ -1,0 +1,45 @@
+.app-container {
+  width: 100vw;
+  height: 100vh;
+}
+.content-container {
+  display: flex;
+  height: 100vh;
+  overflow: scroll;
+}
+.header {
+  width: 100vw;
+  height: 60px;
+}
+.side-nav {
+  width: 260px;
+  background-color: #121212;
+  transition: none;
+  overflow: hidden;
+}
+
+.content {
+  width: 100%;
+  height: auto;
+  // background: linear-gradient(0deg, rgba(18,18,18,1) 0%, rgba(21,27,27,1) 32%, rgba(16,64,68,1) 100%, rgba(18,113,122,1) 100%, rgba(89,222,234,1) 100%);
+  // background: rgb(18,18,18);
+  // background: linear-gradient(0deg, rgba(18,18,18,1) 0%, rgba(25,56,56,1) 73%, rgba(7,73,79,1) 98%, rgba(1,85,93,1) 100%, rgba(89,222,234,1) 100%);
+  // background: rgb(18,18,18);
+  // background: linear-gradient(0deg, rgba(18,18,18,1) 47%, rgba(3,25,27,1) 86%, rgba(5,44,48,1) 100%);
+  // background: rgb(18, 18, 18);
+  background-image: linear-gradient(
+    to bottom,
+    #121212,
+    #18181c,
+    #1b1e26,
+    #1c2530,
+    #1b2c3a,
+    #1b2c3a,
+    #1b2c3a,
+    #1b2c3a,
+    #1c2530,
+    #1b1e26,
+    #18181c,
+    #121212
+  );
+}

@@ -1,0 +1,42 @@
+.menu {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .menu .item {
+    width: 100%;
+    display: flex;
+    padding: 15px 30px;
+    align-items: center;
+    font-family: "Padauk", sans-serif;
+    //   font-family: 'Tapestry', cursive;
+    font-weight: 700;
+    transition: 0.3s all ease-in-out;
+    &:hover {
+      background-color: #194156;
+      cursor: pointer;
+    }
+    &:hover i{
+      color: whitesmoke;
+      cursor: pointer;
+    }
+    i {
+      transition: 0.3s all ease-in-out;
+      color: #59deea;
+      font-size: 23px;
+    }
+    span{
+      color: #9b9a9a;
+      text-decoration: none;
+      margin-left: 19px;
+      font-size: 18px;
+    }
+  }
+  
+  .active {
+    span {
+      color: whitesmoke !important;
+    }
+  }

@@ -1,0 +1,229 @@
+$dark-color: #59deea;
+
+.header {
+  height: 100%;
+  width: 100%;
+  background-color: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// LEFT
+.left-side-nav {
+  width: 220px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 25px;
+}
+
+.menu-outer {
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+  border-radius: 10px;
+  padding-left: 5px;
+  .menu {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+    span {
+      position: absolute;
+      width: 30px;
+      height: 4px;
+      background-color: #59deea;
+      border-radius: 4px;
+      transition: 0.5s all ease-in-out;
+      &:nth-child(1) {
+        transform: translateY(-10px);
+        width: 20px;
+      }
+      &:nth-child(2) {
+        transform: translateY(10px);
+        width: 15px;
+        // left: 15px;
+      }
+    }
+  }
+  .active {
+    // padding-left: 5px;
+    span {
+      &:nth-child(3) {
+        transform: translateX(60px);
+      }
+      &:nth-child(1) {
+        width: 30px;
+        transform: translateY(0) rotate(45deg);
+        transition-delay: 0.125s;
+      }
+      &:nth-child(2) {
+        width: 30px;
+        transform: translateY(0) rotate(315deg);
+        transition-delay: 0.25s;
+      }
+    }
+  }
+}
+.logo {
+  cursor: pointer;
+  width: 130px;
+  height: 100%;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  img {
+    width: 40px;
+    height: 40px;
+  }
+  .logo-name {
+    font-family: "Aclonica", sans-serif;
+    // font-family: "Atkinson Hyperlegible", sans-serif;
+    // font-family: "Chela One", cursive;
+    // font-family: "Dhurjati", sans-serif;
+    // font-family: "Marko One", serif;
+    // font-family: "Merienda", cursive;
+    // font-family: "Padauk", sans-serif;
+    // font-family: "Tapestry", cursive;
+    color: whitesmoke;
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 5px;
+  }
+}
+
+// MIDDLE
+.middle-nav {
+  width: 350px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #242424;
+  border-radius: 50px;
+  transition: 0.1s all ease-in-out;
+  &:hover {
+    background-color: #353434;
+  }
+  .search-box {
+    width: 300px;
+    height: 40px;
+    border-radius: 50px;
+    font-size: 15px;
+    input {
+      width: 300px;
+      height: 100%;
+      background-color: #242424;
+      border-radius: 50px 0 0 50px;
+      border: none;
+      transition: 0.1s all ease-in-out;
+      padding: 0 20px;
+      color: whitesmoke;
+      &:hover {
+        background-color: #353434;
+      }
+      &:focus {
+        outline: none;
+        border: none;
+      }
+    }
+  }
+  .search-icon {
+    width: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.1s all ease-in-out;
+    color: whitesmoke;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+// RIGHT
+.right-side-nav {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  .icons {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 22px;
+    color: #59deea;
+    .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.1s all ease-in-out;
+    }
+    .heart {
+      transition: 0.1s all ease-in-out;
+      &:hover {
+        cursor: pointer;
+        color: rgb(242, 30, 115);
+        
+      }
+    }
+    .list {
+      transition: 0.3s all ease-in-out;
+      &:hover {
+        cursor: pointer;
+        color: whitesmoke;
+      }
+    }
+    .user {
+      transition: 0.1s all ease-in-out;
+      &:hover {
+        cursor: pointer;
+        color: whitesmoke;
+      }
+    }
+  }
+}
+
+// RESPONSIVE
+@media (max-width: 800px) {
+  .middle-nav {
+    scale: 0;
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .heart {
+    display: none;
+    scale: 0;
+  }
+  .list {
+    scale: 0;
+    display: none;
+  }
+  .left-side-nav {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .right-side-nav {
+    width: 120px;
+  }
+}
+

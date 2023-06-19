@@ -1,0 +1,47 @@
+<!-- HEADER MAIN DIV -->
+<div class="header">
+
+    <!-- LEFT SIDE OF  THE NAVBAR -->
+    <div class="left-side-nav">
+      <div class="menu-outer" (click)="menu()">
+        <div class="menu" [ngClass]="{'active':!bool}">
+          <span></span>
+          <span ></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="logo" routerLink="">
+          <img src="../../assets/media/images/logo1.jpg" alt="">
+          <div class="logo-name">Wave<span style="color: #59deea;">m</span>e</div>
+      </div>
+    </div>
+
+    <!-- MIDDLE OF NAVBAR -->
+    <div class="middle-nav">
+      
+      
+          <div class="search-box">
+              <input type="text" placeholder="Search songs">
+          </div>
+          <div class="search-icon">
+              <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+          </div>
+    </div>
+  
+  
+    <!-- RIGHT SIDE OF THE NAVBAR -->
+    <div class="right-side-nav">
+      <div class="icons">
+          <div class="icon heart">
+              <i class="fa-solid fa-heart"></i>
+          </div>
+          <div class="icon list">
+            <i class="fa-solid fa-arrow-up-a-z"></i>
+          </div>
+          <div class="icon user">
+              <i class="fa-solid fa-user"></i>
+          </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,40 @@
+<div class="container-home">
+    <div class="audio-bar" style="position: fixed;bottom: 0;width: 1250px;background-color: #121212;height: 100px;opacity: 1;z-index: 30;padding: 0 30px;">
+        <audio #audioPlayer  controls  style="width: 100%;height: 75px;" >
+            <source src="../../../assets/media/songs2/Full Video Tera Yaar Hoon Main Sonu Ke Titu Ki Sweety Arijit Singh Rochak Kohli Song 2018.mp3" type="audio/mpeg">
+            <source src="" type="audio/mpeg">
+            <source src="" type="audio/mpeg">
+        </audio>
+    </div>
+    <div class="trending-songs">
+        <div class="heading-container">
+            <div class="heading">Malayalam Songs</div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div class="text-center mt-5" *ngIf="malayalamSongs==0 && isLoading==false">
+            <div class="spinner-border text-danger" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <!-- SONG CARD -->
+        <div class="all-songs-div">
+            <div class="song-div" style="position: relative;" *ngFor="let malayalam of malayalamSongs;let i=index">
+              <i class="fa-solid fa-trash-can delete" style="position:absolute;top: 260px;left: 170px;z-index: 20;" (click)="deleteSong(malayalam.id)"></i>
+              <div class="image">
+                <img [src]="malayalam.artwork" alt="">
+              </div>
+              <div class="play-button" style="position: absolute;"  (click)="playSong1(malayalam.url,i)">
+                <i class="fa-solid fa-play fa-xl" *ngIf="!malayalam.isPlaying1" ></i>
+                <i class="fa-solid fa-pause fa-xl" *ngIf="malayalam.isPlaying1" ></i>
+              </div>
+              <div class="text-song">
+                <div class="song-name">{{malayalam.title}}</div>
+                <div class="song-album">{{malayalam.album}}</div>
+                <div class="singer">{{malayalam.artist}}</div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
